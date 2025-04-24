@@ -35,7 +35,7 @@ def train_model(mode,data_path):
         if mode == "classify":
             results = model.train(
                 data=data_path,  
-                epochs=100,
+                epochs=15,
                 imgsz=320,
                 batch=32,
                 amp=False,
@@ -43,7 +43,7 @@ def train_model(mode,data_path):
         else:
             results = model.train(
                 data=data_path,
-                epochs=100,
+                epochs=15,
                 imgsz=640,
                 batch=32,
                 amp=False,
@@ -186,8 +186,7 @@ def evaluate_or_test_model(mode, trained_model_path, data_path, ):
 
             # ใช้ JSON format 
             result_json = {
-                "task": eval_type,
-                "mode": mode,
+                "message": f"YOLO {eval_type} evaluation completed successfully",
                 "metrics": {
                     "accuracy": round(top1_accuracy, 4),
                     "avg_precision": round(avg_precision, 4),

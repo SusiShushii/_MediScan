@@ -4,6 +4,8 @@ import sys
 import threading
 import signal
 from model_manager import MLModelManager
+from model_manager import MLModelManager
+from utils.logger import log_info, log_error,log_warning  
 
 # ✅ ตัวแปรควบคุมการทำงานของเซิร์ฟเวอร์
 server_running = True
@@ -36,7 +38,7 @@ class TCPServer:
                 response = {"error": "Missing project ID (project_id)."}
                 conn.sendall((json.dumps(response) + "\n").encode('utf-8'))
                 return
-
+            
             if cmd_type == 'train':
                 # print(f"🚀 Running Training Command for project: {project_id}")
                 model_name = data.get("model_name")
@@ -122,11 +124,15 @@ class TCPServer:
         
         try:
             with conn:
+                addr = conn.getpeername()
+                client_ip, client_port = addr[0], addr[1]
+                log_info(f"Connected by {client_ip}:{client_port}")
                 while server_running:
                     data = conn.recv(4096)
                     if not data:
                         break
                     command = data.decode('utf-8').strip()
+                    log_info(f"📨 Incoming data from {client_ip}:{client_port}: {command[:100]}...")
                     self.handle_command(command, conn, model_manager)
         except Exception as e:
             print(f"Error handling client: {e}")
@@ -136,7 +142,7 @@ class TCPServer:
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server_socket.bind((self.host, self.port))
         self.server_socket.listen(5)
-        print(f"✅ TCP server running on {self.host}:{self.port}")
+        log_info(f"TCP server running on {self.host}:{self.port}")
 
         while server_running:
             try:
@@ -146,7 +152,7 @@ class TCPServer:
             except socket.timeout:
                 continue
             except Exception as e:
-                print(f"Server error: {e}")
+                log_error(f"Server error: {e}", exc_info=True)
                 break
 
     def stop_server(self):
@@ -155,6 +161,7 @@ class TCPServer:
         server_running = False
         if self.server_socket:
             self.server_socket.close()
+            log_info("TCP server stopped.")
             print("✅ TCP server stopped.")
 
 ### --- Start Servers ---
@@ -164,7 +171,6 @@ def start_servers():
     tcp_server = TCPServer()
     tcp_thread = threading.Thread(target=tcp_server.start_server, daemon=True)
     tcp_thread.start()
-
     print("✅ Server started successfully.")
     return tcp_server
 
