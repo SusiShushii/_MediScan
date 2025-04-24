@@ -1,0 +1,7 @@
+names:
+- cancer
+- non-cancer
+nc: 2
+test: test/images
+train: train/images
+val: valid/images
