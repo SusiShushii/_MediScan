@@ -205,7 +205,7 @@ class MLModelManager:
             
             # ✅ บันทึกโมเดลและอัปเดต DB
             save_result = self.save_model(project_id , model_name , mode , result_dir , model_path , validation_metrics)
-            log_info(f"Evaluation results inserted for model {model_name} in project {project_id}")
+            log_info(f"Training results inserted for model {model_name} in project {project_id}")
             return save_result
 
         except Exception as e:

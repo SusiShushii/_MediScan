@@ -35,7 +35,7 @@ def train_model(mode,data_path):
         if mode == "classify":
             results = model.train(
                 data=data_path,  
-                epochs=15,
+                epochs=100,
                 imgsz=320,
                 batch=32,
                 amp=False,
@@ -43,7 +43,7 @@ def train_model(mode,data_path):
         else:
             results = model.train(
                 data=data_path,
-                epochs=15,
+                epochs=100,
                 imgsz=640,
                 batch=32,
                 amp=False,
