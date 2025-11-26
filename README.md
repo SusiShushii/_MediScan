@@ -18,6 +18,7 @@ mediscan_env\Scripts\activate
 
 # Deactivate environment (if needed)
 deactivate
+``
 
 ### 🔌 3. Running TCP Server (Main Backend)
 python main.py
