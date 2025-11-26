@@ -9,16 +9,16 @@ The server can receive commands via both **TCP Socket** and **Swagger API**.
 pip install -r requirements.txt
 
 ### 🧪 2. (Optional) Create and Activate Virtual Environment
-```bash
-# Create virtual environment
+
+Create virtual environment
 python -m venv mediscan_env
-
-# Activate on Windows
+--
+Activate on Windows
 mediscan_env\Scripts\activate
-
-# Deactivate environment (if needed)
+--
+Deactivate environment (if needed)
 deactivate
-``
+
 
 ### 🔌 3. Running TCP Server (Main Backend)
 python main.py
