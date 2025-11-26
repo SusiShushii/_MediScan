@@ -12,13 +12,12 @@ pip install -r requirements.txt
 
 Create virtual environment
 python -m venv mediscan_env
---
+
 Activate on Windows
 mediscan_env\Scripts\activate
---
+
 Deactivate environment (if needed)
 deactivate
-
 
 ### 🔌 3. Running TCP Server (Main Backend)
 python main.py
