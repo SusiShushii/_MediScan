@@ -1,28 +1,27 @@
-HOW TO RUN PROJECT
-THE Server is able to receive the command on both Swagger and TCP Socket Sites.
+## 🚀 How to Run the Project
 
-*RUNNING SERVER*
-Running TCP Server CMD(Main): python main.py
+The server can receive commands via both **TCP Socket** and **Swagger API**.
 
-For Running SWAGGER API DOCS
-CMD: uvicorn swagger_api:app --reload --port 8000
-DOCS: http://127.0.0.1:8000/docs
- 
-*RUNNING SERVER*
+---
 
-*INSTALL PACKAGES*
-Install packages
+### 📦 1. Install Dependencies
+``bash
 pip install -r requirements.txt
-*INSTALL PACKAGES*
 
-*FOR VENV ONLY*
-Create Virtual Environment with Python 3.11
+### 🧪 2. (Optional) Create and Activate Virtual Environment
+Requires Python 3.11
+# Create virtual environment
 python -m venv mediscan_env
+# Activate on Windows
+mediscan_env\Scripts\activate
 
-Activate Environment
-บน Windows: mediscan_env\Scripts\activate
+# To deactivate (only if needed):
+deactivate
 
-ลบ environment เดิม
-deactivate --- IGNORE --- 
-rmdir /s mediscan_env --- IGNORE ---
-*FOR VENV ONLY*
+### 🔌 3. Running TCP Server (Main Backend)
+python main.py
+
+### 📚 4. Running Swagger API Documentation
+uvicorn swagger_api:app --reload --port 8000
+#📎 Swagger UI:
+👉 http://127.0.0.1:8000/docs
