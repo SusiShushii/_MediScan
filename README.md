@@ -1,21 +1,21 @@
-HOW TO RUN PROJECT**
+HOW TO RUN PROJECT
 THE Server is able to receive the command on both Swagger and TCP Socket Sites.
------- RUNNING SERVER ------
 
+*RUNNING SERVER*
 Running TCP Server CMD(Main): python main.py
 
 For Running SWAGGER API DOCS
 CMD: uvicorn swagger_api:app --reload --port 8000
 DOCS: http://127.0.0.1:8000/docs
  
------- RUNNING SERVER ------
+*RUNNING SERVER*
 
------ INSTALL PACKAGES -----
+*INSTALL PACKAGES*
 Install packages
 pip install -r requirements.txt
------ INSTALL PACKAGES -----
+*INSTALL PACKAGES*
 
------- FOR VENV ONLY -------
+*FOR VENV ONLY*
 Create Virtual Environment with Python 3.11
 python -m venv mediscan_env
 
@@ -25,4 +25,4 @@ Activate Environment
 ลบ environment เดิม
 deactivate --- IGNORE --- 
 rmdir /s mediscan_env --- IGNORE ---
------- FOR VENV ONLY -------
+*FOR VENV ONLY*
