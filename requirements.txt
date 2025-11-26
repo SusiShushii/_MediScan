@@ -1,0 +1,17 @@
+# Core ML/AI
+torch==2.4.1
+torchvision==0.19.1
+ultralytics==8.3.0
+numpy>=1.26.0
+opencv-python==4.8.1.78
+
+# API & Web
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+
+# Database
+redis==5.0.1
+
+# Utilities
+Pillow==10.1.0
