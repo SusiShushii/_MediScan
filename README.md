@@ -11,7 +11,7 @@ Create virtual environment (Important, Python 3.12.10) (Also, model_manager subp
 
 To run on GPU with Yolo it needs to install additional packages in requirements.txt in the above comment (For 5070ti)
 
-Example ``bash # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 ``
+Example: ``bash # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 ``
 
 python -m venv mediscan_env
 
