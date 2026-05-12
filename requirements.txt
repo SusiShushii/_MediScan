@@ -1,9 +1,11 @@
 # Core ML/AI
-torch==2.4.1
-torchvision==0.19.1
+# For RTX 50-series / Blackwell, install PyTorch separately:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
 ultralytics==8.3.0
 numpy>=1.26.0
 opencv-python==4.8.1.78
+scikit-learn>=1.4.0
 
 # API & Web
 fastapi==0.104.1
