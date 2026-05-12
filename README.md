@@ -25,7 +25,9 @@ pip install -r requirements.txt
 python main.py
 
 ### 📚 4. Running Swagger API Documentation
+``bash
 uvicorn swagger_api:app --reload --port 8000
+``
 #📎 Swagger UI:
 👉 http://127.0.0.1:8000/docs
 
