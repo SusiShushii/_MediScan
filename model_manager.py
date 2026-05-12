@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 import shutil
 import subprocess
+import sys
 from tkinter import Image
 import logging
 
@@ -42,7 +43,7 @@ class MLModelManager:
         log_info(f"Running prepare_workspace.py for project_id: {project_id}, mode: {mode}")
 
         result = subprocess.run(
-            ['python', 'prepare_workspace.py', project_id , mode],
+            [sys.executable, 'prepare_workspace.py', project_id , mode],
             capture_output=True,
             text=True
         )
@@ -164,7 +165,7 @@ class MLModelManager:
         try:
             # ✅ เรียก YOLO จริง
             result = subprocess.run(
-                ['python', 'yolo.py', '--mode', mode, '--task', 'train','--data', data_path ],
+                [sys.executable, 'yolo.py', '--mode', mode, '--task', 'train','--data', data_path ],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
@@ -244,7 +245,7 @@ class MLModelManager:
         # เรียกใช้ `yolo.py` พร้อมส่ง mode และ model path
         try:
             result = subprocess.run(
-                ['python', 'yolo.py', '--mode', mode, '--task', 'evaluate', '--trained_model_path', model_path,'--data', data_path],
+                [sys.executable, 'yolo.py', '--mode', mode, '--task', 'evaluate', '--trained_model_path', model_path,'--data', data_path],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE
             )
