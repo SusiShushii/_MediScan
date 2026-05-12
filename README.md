@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 To run on GPU with Yolo it needs to install additional packages in requirements.txt in the above comment (For 5070ti)
 
-Example: ``bash # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 ``
+Example: ``bash pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 ``
 
 ### 🔌 3. Running TCP Server (Main Backend)
 python main.py
