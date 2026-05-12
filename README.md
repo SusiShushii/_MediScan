@@ -7,7 +7,7 @@ The server can receive commands via both **TCP Socket** and **Swagger API**.
 
 ### 🧪 1. Create and Activate Virtual Environment
 
-Create virtual environment (Python 3.12.10)
+Create virtual environment (Python 3.12.10) (Also, model_manager subprocess will run on .venv environment)
 
 python -m venv mediscan_env
 
