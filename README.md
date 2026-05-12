@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 ### 🧪 2. (Optional) Create and Activate Virtual Environment
 
-Create virtual environment
+Create virtual environment (Python 3.12.10)
 python -m venv mediscan_env
 
 Activate on Windows
