@@ -29,19 +29,19 @@ uvicorn swagger_api:app --reload --port 8000
 #📎 Swagger UI:
 👉 http://127.0.0.1:8000/docs
 
-``bash
-
-## Folder Structure
-- MediScan
-      - Workspace
-        - Project_001
-- MedSight_Project
-      - Images (For Prediction)
-      - Project_001
-          - DB.db
-          - data.yaml
-          - models
-          - annotated_images
-      - Project_002
-      - Project..
-    
+```text
+MediScan/
+├── Workspace/
+│   └── Project_001/
+│
+└── MedSight_Project/
+    ├── Images/                  # For prediction
+    ├── Project_001/
+    │   ├── DB.db
+    │   ├── data.yaml
+    │   ├── models/
+    │   └── annotated_images/
+    │
+    ├── Project_002/
+    └── Project_.../
+```
