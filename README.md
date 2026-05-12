@@ -7,24 +7,24 @@ The server can receive commands via both **TCP Socket** and **Swagger API**.
 
 ### 🧪 1. Create and Activate Virtual Environment
 
-Create virtual environment (Important, Python 3.12.10) (Also, model_manager subprocess will run on .venv environment)
+Create virtual environment (Important, Python 3.12.10) (Also, in model_manager subprocess calling yolo.py will run on .venv environment)
+``bash python -m venv mediscan_env``
 
-To run on GPU with Yolo it needs to install additional packages in requirements.txt in the above comment (For 5070ti)
+Activate on Windows:
+``bash mediscan_env\Scripts\activate``
 
-Example: ``bash # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 ``
-
-python -m venv mediscan_env
-
-Activate on Windows
-mediscan_env\Scripts\activate
-
-Deactivate environment (if needed)
-deactivate
+Deactivate environment (if needed):
+``bash deactivate ``
 
 ### 📦 2. Install Dependencies
 ``bash
 pip install -r requirements.txt
 ``
+
+To run on GPU with Yolo it needs to install additional packages in requirements.txt in the above comment (For 5070ti)
+
+Example: ``bash # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 ``
+
 ### 🔌 3. Running TCP Server (Main Backend)
 python main.py
 
