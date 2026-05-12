@@ -26,7 +26,7 @@ To run on GPU with Yolo it needs to install additional packages in requirements.
 Example: ``bash pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 ``
 
 ### 🔌 3. Running TCP Server (Main Backend)
-python main.py
+``bash python main.py ``
 
 ### 📚 4. Running Swagger API Documentation
 ``bash
